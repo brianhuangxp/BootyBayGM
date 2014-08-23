@@ -1,0 +1,69 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.gamehoo.bbgm</groupId>
+    <artifactId>bbgm-home</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>war</packaging>
+    <name>HomeServer</name>
+    <description>Gamehoo bbgm home server</description>
+
+    <properties>
+        <!-- Spring version -->
+        <version.spring>3.1.1.RELEASE</version.spring>
+
+        <!-- Spring Third Party dependencies -->
+        <version.aopalliance>1.0</version.aopalliance>
+
+        <!-- Third Party dependencies -->
+        <version.standard.taglibs>1.1.2</version.standard.taglibs>
+        <version.commons.logging>1.1.1</version.commons.logging>
+
+        <!-- JBoss AS plugin for deployment -->
+        <version.jboss.as.maven.plugin>7.1.1.Final</version.jboss.as.maven.plugin>
+
+    </properties>
+
+    <dependencyManagement>
+
+        <dependencies>
+            <dependency>
+                <groupId>org.jboss.spec</groupId>
+                <artifactId>jboss-javaee-web-6.0</artifactId>
+                <version>3.0.0.Final</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.jboss.spec.javax.servlet</groupId>
+            <artifactId>jboss-servlet-api_3.0_spec</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.16</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>BootyBayHome</finalName>
+        <!--<finalName>BootyBayImport-${build.number}</finalName>-->
+        <plugins>
+
+
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <groupId>org.apache.maven.plugins</groupId>
+                <configuration>
+                    <webappDirectory>webapp</webappDirectory>
+                </configuration>
+            </plugin>
+
+
+        </plugins>
+    </build>
+</project>
