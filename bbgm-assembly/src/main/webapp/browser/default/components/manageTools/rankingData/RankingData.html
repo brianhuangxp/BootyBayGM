@@ -1,0 +1,58 @@
+<div class="ranking-search-panel-div">
+    <button ng-click="orderByPrepay()">充值排名</button>
+    <button ng-click="orderByLevel()">等级排名</button>
+    <button ng-click="orderByGem()">钻石排名</button>
+    <button ng-click="orderByGold()">金币排名</button>
+    <button ng-click="orderByConsecutiveVictories()">连胜排名</button>
+    <button ng-click="orderByGamePoint()">积分排名</button>
+    <button ng-click="orderByZigFloor()">层数排名</button>
+    <button ng-click="orderByZigScore()">星数排名</button>
+    <button ng-click="orderByVictoryScore()">胜利点排名</button>
+</div>
+
+<div class="panel panel-default x-table">
+    <div class="x-table x-scroll-table">
+        <table class="table table-striped table-hover text-center">
+            <thead>
+            <tr>
+                <th class="text-center" style="width: 10%">名次</th>
+                <th class="text-center" style="width: 15%">ID</th>
+                <th class="text-center" style="width: 25%">名字</th>
+                <th class="text-center" style="width: 20%">所在服务器</th>
+                <th class="text-center" ng-show="showPlayerPrepay" style="width: 30%">总充值金额</th>
+                <th class="text-center" ng-show="showPlayerLevel" style="width: 30%">玩家等级</th>
+                <th class="text-center" ng-show="showPlayerGem" style="width: 30%">总钻石数</th>
+                <th class="text-center" ng-show="showPlayerGold" style="width: 30%">总金币数</th>
+                <th class="text-center" ng-show="showConsecutiveVictories" style="width: 30%">今日最高连胜</th>
+                <th class="text-center" ng-show="showPlayerGamePoint" style="width: 30%">竞技场总积分</th>
+                <th class="text-center" ng-show="showZigFloor" style="width: 30%">今日通灵塔层数</th>
+                <th class="text-center" ng-show="showZigScore" style="width: 30%">今日通灵塔星数</th>
+                <th class="text-center" ng-show="showVictoryScore" style="width: 30%">胜利点</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr bindonce ng-repeat="data in matchedEntries = dataList|orderBy: orderColumn |startFrom:currentPage*pageSize|limitTo:pageSize">
+                <td ng-bind="currentPage * pageSize + $index + 1"></td>
+                <td bo-html="data.playerId"></td>
+                <td bo-html="data.playerName"></td>
+                <td bo-html="data.serverId | codeMapping: serverMappings"></td>
+                <td bo-html="data.playerPrepay | currency" ng-show="showPlayerPrepay"></td>
+                <td bo-html="data.playerLevel" ng-show="showPlayerLevel"></td>
+                <td bo-html="data.playerGem | number" ng-show="showPlayerGem"></td>
+                <td bo-html="data.playerGold | number" ng-show="showPlayerGold"></td>
+                <td bo-html="data.consecutiveVictories" ng-show="showConsecutiveVictories"></td>
+                <td bo-html="data.playerGamePoint | number" ng-show="showPlayerGamePoint"></td>
+                <td bo-html="data.zigFloor | number" ng-show="showZigFloor"></td>
+                <td bo-html="data.zigScore | number" ng-show="showZigScore"></td>
+                <td bo-html="data.victoryScore | number" ng-show="showVictoryScore"></td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr class="noData ng-hide" ng-show="dataList == null || dataList.length == 0">
+                <td colspan="6">无数据</td>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+    <div rc-component="tablePager"></div>
+</div>

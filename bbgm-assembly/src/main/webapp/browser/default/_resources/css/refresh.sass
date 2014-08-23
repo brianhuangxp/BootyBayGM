@@ -1,0 +1,192 @@
+@import "core"
+@import "elements/_elements"
+html, body
+    height: 100%
+
+body
+    margin: 0
+    padding: 0
+    overflow-y: scroll
+    font-family: Arial, Helvetica, sans-serif
+    font-size: 12px
+    color: #666666
+
+.right-align
+    text-align: right
+.center-align
+    text-align: center
+
+.fill-width-height
+    width: 100%
+    height: 100%
+
+.x-hide
+    display: none
+
+.container
+    width: 980px
+    margin: 0 auto
+    height: 500px
+
+.top-bar
+    padding: 6px 18px
+    text-align: right
+
+.logo-icon
+    padding-left: 200px
+    height: 25px
+    //background: url("../images/logo.png") no-repeat center left
+
+.logo-icon  > .top-bar-icon
+    height: 25px
+    display: inline-block
+    vertical-align: bottom
+
+.top-bar-content
+    display: inline-block
+
+.logo-icon  > .top-bar-content
+    vertical-align: bottom
+
+.top-bar-content > span
+    margin-left: 18px
+
+.index-nickName
+    color: blue
+
+.link
+    color: #0b405e
+    font-weight: bold
+    cursor: pointer
+    white-space: nowrap
+    //background: url("../images/header-link-arrow.png") no-repeat left center
+    padding-left: 10px
+
+.dnd
+    //background-image: url("../images/icon_dnd_all_calls.png")
+    color: rgb(56, 177, 50)
+    padding-left: 18px
+    font-weight: normal
+
+.leftMenu
+    padding: 12px 0
+    margin: 12px
+    border: lightblue 1px solid
+    border-radius: 8px
+    width: 20%
+    height: 100%
+    +formElement()
+    float: left
+    overflow: auto
+
+.main-container-wrap
+    margin: 12px
+    width: 74%
+    height: 100%
+    +formElement()
+    float: left
+    .main-container-top
+        border-radius: 8px
+        border: lightblue 1px solid
+        padding: 18px
+        height: 100%
+        .main-container
+            height: 100%
+            overflow: auto
+            .pageContainer
+                height: 90%
+                width: 100%
+                position: relative
+    .main-container-bottom
+        margin: 12px
+        height: 10%
+        position: relative
+
+.page-header
+    font-weight: normal
+    margin: 0 18px 11px 0
+    position: relative
+    text-align: center
+
+.page-header-title
+    //color: #006992
+    font-size: 14px
+    border: 1px solid lightblue
+
+.page-header-bar
+    position: absolute
+    top: 0
+    bottom: 0
+    right: 0
+    left: 160px
+    text-align: right
+
+.page-header-bar-item
+    display: inline-block
+    padding-left: 32px
+    margin-right: 18px
+    color: #063f60
+    cursor: pointer
+    vertical-align: middle
+    height: 21px
+    line-height: 21px
+
+//.page-header-bar-conference
+//    background: url("../images/fcc.png") no-repeat top left
+//
+//.page-header-bar-ringou
+//    background: url("../images/ringout.gif") no-repeat top left
+//
+//.page-header-bar-faxout
+//    background: url("../images/faxout.png") no-repeat top left
+
+.page-header-bar-quicklink
+    width: 170px
+    //background: url("../images/quicklink.png") no-repeat center
+    display: inline-block
+    height: 24px
+    vertical-align: middle
+    cursor: pointer
+
+.footer
+    padding: 18px 18px 0
+    color: #999999
+    font-size: 11px
+
+.legal-copyright
+    color: #072844
+    font-size: 12px
+    text-decoration: none
+    margin-bottom: 9px
+    display: inline-block
+
+.x-scroll-table
+    max-height: 200px
+    overflow: auto
+    .table
+        margin-bottom: 3px
+        table-layout: fixed
+
+.x-float-right
+    float: right
+
+
+.x-float-left
+    float: left
+
+.table-pager
+    border-top: 1px #dddddd solid
+    overflow: hidden
+    padding: 8px 40px 8px 0
+    >span
+        padding: 2px 0
+    >.linkStyle
+        +linkStyle
+        cursor: pointer
+    >span,>input,>button
+        margin: 0 10px
+    >input
+        cursor: text
+        width: 35px
+    .last
+        clear: both

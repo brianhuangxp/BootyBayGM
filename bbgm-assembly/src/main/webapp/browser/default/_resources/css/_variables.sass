@@ -1,0 +1,436 @@
+@import fileRes2
+$experimental-support-for-svg: true
+
+// Variables
+$darkBlue: #063f60
+$orange: #fea108
+$red: #e00
+
+$defaultBodyTextColor: #666666 !default
+
+$defaultTextColor: $darkBlue !default
+$defaultBorderColor: #aecbda !default
+$defaultBoxBorderColor: #cccccc !default
+$defaultBackgroundColor: #d1e3ee !default
+
+$defaultTextColorActive: white !default
+$defaultBorderColorActive: $darkBlue !default
+$defaultBackgroundColorActive: $darkBlue !default
+
+$defaultTextColorHover: $darkBlue !default
+$defaultBorderColorHover: #a2c1d4 !default
+$defaultBackgroundColorHover: #b8cfde !default
+
+$defaultSpacing: 12px
+
+$formElementVerticalMargin: 6px
+$formContainerVerticalMargin: $defaultSpacing
+$formElementHorizontalMargin: $defaultSpacing
+
+$panelNormalBg: #fff !default
+$panelGrayBg: #f7fbfd !default
+$panelTitleTextColor: #333333 !default
+$panelContentPadding: $defaultSpacing
+
+// Group Buttons
+$groupButtonBorderRadius: 4px
+$groupButtonTextColor: $darkBlue !default
+$groupButtonBorderColor: $defaultBoxBorderColor !default
+$groupButtonBackgroundColor1: #ffffff !default
+$groupButtonBackgroundColor2: #f4f3f3 !default
+$groupButtonTextColorActive: #fff !default
+$groupButtonBorderColorActive: $darkBlue !default
+$groupButtonBackgroundColor1Active: $darkBlue !default
+$groupButtonBackgroundColor2Active: $darkBlue !default
+
+// Buttons
+$buttonBorderRadius: 15px
+$buttonColor: $defaultTextColor !default
+$buttonBackgroundColor: #d1e2ed !default
+$buttonBorderColor: #a2c1d4 !default
+$buttonColorHover: $defaultTextColorHover !default
+$buttonBackgroundColorHover: #b8cfde !default
+$buttonBorderColorHover: #a2c1d4 !default
+$buttonBackgroundColorDisabled: #e4e6e8 !default
+$buttonBorderColorDisabled: #e4e6e8 !default
+$buttonTextColorDisabled: #fff !default
+$actionButtonTextColor: #fff !default
+$actionButtonBorderColor: #0d3f60 !default
+$actionButtonBackgroundColor: #0d3f60 !default
+$actionButtonTextColorHover: #fff !default
+$actionButtonBorderColorHover: #062844 !default
+$actionButtonBackgroundColorHover: #062844 !default
+
+$buttonTdSmallerColor: #de730c !default
+$buttonFillDivColor: $defaultTextColor !default
+$buttonLinkColorDisabled: #999 !default
+
+// Checkbox
+$checkboxLabelColor: #666666 !default
+
+// Text
+$textInputBorderColor: $defaultBoxBorderColor !default
+$textInputBackgroundColor: #f4f2f3 !default
+
+// TabPanel
+$tabpanelItemColor: $defaultTextColor !default
+$tabpanelItemBorderColor: $defaultBorderColor !default
+$tabpanelItemBackgroundColor: $defaultBackgroundColor !default
+$tabpanelItemBackgroundColorActive: $defaultBackgroundColorActive !default
+$tabpanelItemBorderColorActive: $defaultBorderColorActive !default
+$tabpanelItemColorActive: $defaultTextColorActive !default
+
+// Window
+$windowTitleColor: white !default
+$windowTitleBackground: $darkBlue !default
+$windowBackgroundColor: white !default
+$windowBorderColor: $darkBlue !default
+$windowBorderRadius: 6px
+
+$cardDefaultBackgroundColor: white !default
+$cardDefaultBorderColor: $textInputBorderColor !default
+$cardDefaultIndexTextColor: white !default
+$cardDefaultIndexBackgroundColor: $buttonBorderColor !default
+$cardActiveTextColor: $darkBlue !default
+$cardActiveIndexTextColor: white !default
+$cardActiveBackgroundColor: $buttonBackgroundColor !default
+$cardActiveIndexBackgroundColor: $darkBlue !default
+
+$windowBackgroundMaskColor: #000000 !default
+$windowBackgroundTransparentMaskColor: #ffffff !default
+$windowCardIndexColor: white !default
+
+// Combo
+$comboHeight: 21px
+$comboBorderRadius: $groupButtonBorderRadius
+$paginatorBorderRadius: $groupButtonBorderRadius
+$comboInnerBorderRadius: $comboBorderRadius - 1
+
+$comboOptionTextColor: #666666 !default
+$comboOptionHoverTextColor: #f4961c !default
+$comboOptionSelectedTextColor: $comboOptionHoverTextColor !default
+$comboOptionDisabledTextColor: $defaultBoxBorderColor !default
+$comboOptionsBgColor: #ffffff !default
+$comboOptionsBorderColor: $defaultBoxBorderColor !default
+$comboDecorRightBorderLeftColor: $defaultBoxBorderColor !default
+
+// Entry Panel
+$entryPanelBorderRadius: 7px // 10px
+$entryPanelFrameColor: #dddcdc !default
+$entryPanelBorderColor: #ffffff !default
+$entryPanelBorderAltColor: #a1c1d2 !default
+$entryPanelBackgroundColor: #d1e3ed !default
+$entryPanelTextColor: #144661 !default
+$entryPanelBorderColorHover: #ffffff !default
+$entryPanelBorderAltColorHover: #91b2c6 !default
+$entryPanelBackgroundColorHover: #b8cfde !default
+$entryPanelTextColorHover: #144661 !default
+$entryPanelBorderColorActive: #0d3f61 !default
+$entryPanelBorderAltColorActive: #91b2c6 !default
+$entryPanelBackgroundColorActive: #0d3f61 !default
+$entryPanelTextColorActive: #ffffff !default
+
+$entryPanelBorderRadiusInner: $entryPanelBorderRadius - 1
+$entryPanelContainerBackgroundColor: #e7f1f6 !default
+$entryPanelItemBorderColor: #aecbda !default
+
+// Collapsable
+$collapsableBorderRadius: 7px
+$collapsableBorderColor: #aecbdc !default
+$collapsableTextColor: #063f60 !default
+$collapsableBackgroundColor: #d1e3ed !default
+$collapsableTextColorActive: #fff !default
+$collapsableBackgroundColorActive: #063f60 !default
+$collapsableTextColorHover: #063f60 !default
+$collapsableBackgroundColorHover: #b8cfde !default
+
+$collapsableTitleTextColor: $panelTitleTextColor !default
+$collapsableContentBgColor: #ffffff !default
+
+// Radio
+$radioGroupTdBorderBottomColor: $defaultBoxBorderColor !default
+
+// Contacts
+$contactsLetterColor: #3a8599 !default
+$contactsLetterDisabledColor: #a4a5a4 !default
+$contactsGridCellColor: $darkBlue !default
+$contactsGridHeaderBgColor: #6f6f6f !default
+
+$contactsListItemColor: $darkBlue !default
+
+// Contactpicker
+$contactPickerDropdownItemBorderColor: $textInputBorderColor !default
+$contactPickerDropdownItemHoverColor: $defaultTextColorHover !default
+$contactPickerDropdownItemHoverBackgroundColor: $defaultBackgroundColor !default
+
+// Datepicker
+$datepickerCalendarLinkColor: #666 !default
+$datepickerCalendarWeekNumberColor: #d9d8d9 !default
+$datepickerCalendarWeekNumberRightBorderColor: $datepickerCalendarWeekNumberColor !default
+$datepickerCalendarHolidayColor: $darkBlue !default
+$datepickerCalendarDisabledDaysColor: #d9d8d9 !default
+$datepickerDateHoverColor: $defaultTextColorHover !default
+$datepickerDateHoverBgColor: $defaultBackgroundColorHover !default
+$datepickerDateHoverBorderColor: $defaultBorderColorHover !default
+
+// Default
+$defaultLinkTextColor: $darkBlue !default
+$defaultLinkTextHoverColor: #072844 !default
+$defaultCopyrightColor: $darkBlue !default
+$defaultHrTextColor: $defaultBoxBorderColor !default
+$defaultHrBackgroundColor: $defaultHrTextColor !default
+$defaultInterfaceColor: #666666 !default
+$defaultListSelectorHolderBorderColor: #CDCDCD !default
+$defaultListSelectorItemColor: #666666 !default
+$defaultListSelectorItemBorderColor: $defaultListSelectorHolderBorderColor !default
+$defaultOverviewServicePlanH2Color: #000 !default
+$defaultLogOutColor: #ffffff !default
+$defaultGetHelpColor: #ffffff !default
+$defaultPageHeaderColor: #006992 !default
+$defaultH1Color: #006993 !default
+$defaultLogotypeWidth: 170px !default
+$defaultLogotypeHeight: 25px !default
+$defaultLogotypeURL: '/img/logos/logo.png' !default
+$defaultBtnActiveColor: #ffffff !default
+$defaultDivErrorTextColor: darken($red, 10%) !default
+$defaultDivErrorBackgroundColor: lighten($orange, 47%) !default
+$defaultDivErrorLinkTextColor: darken($red, 15%) !default
+
+// Extension
+$extensionTextColor: #063f60 !default
+$extensionRowSelectedColor: white !default
+$extensionRowSelectedBgColor: #063f60 !default
+$extensionRowHoverBgColor: $defaultBackgroundColorHover !default
+$extensionRowHoverTextColor: $darkBlue !default
+
+// Fieldset
+$fieldSetBorderColor: #bfbebe !default
+
+// Grid
+$gridHeaderBgColor: #f4f2f3 !default
+$gridHeaderTopBorderColor: $defaultBoxBorderColor !default
+$girdCellBottomBorderColor: $gridHeaderTopBorderColor !default
+$girdDraggedRowColor: #f1faff !default
+$girdDraggedRowTextColor: #666 !default
+$gridRowHoverBgColor: $extensionRowHoverBgColor !default
+$gridRowHoverTextColor: $defaultBodyTextColor !default
+$gridRowSelectedBgColor: $extensionRowSelectedBgColor !default
+$gridRowSelectedColor: $extensionRowSelectedColor !default
+$gridOnDraggingBackgroundColor: #eee !default
+$gridOnDraggingTextColor: #666 !default
+
+// Header
+$headerLinkColor: $darkBlue !default
+$headerControlLinkVisitedColor: #0B405E !default
+$headerControlLinkHoverColor: #072844 !default
+$headerControlLinkActiveColor: #0B405E !default
+$headerDisclaimerLayerColor: #999999 !default
+$headerBtnDNDAvailableColor: $darkBlue !default
+$headerBtnDNDUnavailableColor: red !default
+$headerBtnDNDBusyColor: #DE730C !default
+$headerBtnDNDRemovedColor: silver !default
+$headerHelpLinkDropdownBgColor: white !default
+$headerHelpLinkDropdownBorderColor: $defaultBoxBorderColor !default
+$headerHelpLinkDropdownItemColor: #063f60 !default
+$headerHelpLinkDropdownItemHoverColor: #063f60 !default
+$headerHelpLinkDropdownItemHoverBgColor: #eee !default
+$headerMainTableTdBorderColor: $defaultBoxBorderColor !default
+$headerHelperDisablingLayerBgColor: white !default
+$headerMarginWidth: 18px
+
+//Footer
+$footerPaddingTop: $headerMarginWidth !default
+$footerPaddingHorizontal: $headerMarginWidth !default
+
+// HelpPanel
+$helpPanelBorderColor: #e3e1e1 !default
+$helpPanelBackgroundColor: #fff !default
+$helpPanelTitleLeftBoderColor: #fa9405 !default
+$helpPanelShortcutsBackgroundColorStart: $helpPanelBackgroundColor !default
+$helpPanelShortcutsBackgroundColorEnd: #f1f1f1 !default
+$helpPanelShortcutsItemColor: #666 !default
+$helpPanelShortcutsIconBackgroundColor1: #055c8c !default
+$helpPanelShortcutsIconBackgroundColor2: #0a3f5d !default
+$helpPanelShortcutsIconHoverBackground: #f79017 !default
+$helpPanelShortcutsIconBackgroundImageColor1: rgba(0, 0, 0, 0.15) !default
+$helpPanelShortcutsIconBackgroundImageColor2: rgba(0, 0, 0, 0) !default
+
+$helpPanelHowToDoShimColor1: rgba(255, 255, 255, 1) !default
+$helpPanelHowToDoShimColor2: rgba(255, 255, 255, 0) !default
+$helpPanelHowToDoItemsBackgroundColorStart: $helpPanelBackgroundColor !default
+$helpPanelHowToDoItemsBackgroundColorEnd: #f8f8f8 !default
+$helpPanelHowToDoItemsBorderRightColor: #e3e1e1 !default
+$helpPanelHowToDoItemSelectionBackground: $helpPanelBackgroundColor !default
+$helpPanelHowToDoItemSelectionBorderColor: #e3e1e1 !default
+
+$helpPanelHowToDoItemTextColor: $darkBlue !default
+$helpPanelHowToDoItemVideoTextColor: $darkBlue !default
+
+// MainMenu
+$menuColor: #fff !default
+$menuBackground: $darkBlue !default
+$menuColorHover: #fea108 !default
+$menuBackgroundHover: $darkBlue !default
+$menuColorActive: $orange !default
+$menuBackgroundActive: #072844 !default
+
+$mainMenuSubTitleColor: #0b405e !default
+$mainMenuSubTitleBgColor: #fff !default
+$mainMenuSubTitleBorderColor: #a1c1d2 !default
+
+// MessageBox
+$messageBoxActiveBgColor: rgba(0, 0, 0, 0.25) !default
+$messageBoxActiveBgColorIE: transparent\9 !default
+$messageBoxBgColor: #666666 !default
+$messageBoxBgBackgroundColor: $messageBoxActiveBgColor !default
+$messageBoxBgBackgroundColorIE: #000\9 !default
+
+// Panel
+$panelTitleLinkColor: $darkBlue !default
+$panelAccordianElementColor: $darkBlue !default
+$panelAccordianElementActiveColor: white !default
+$panelAccordianElementSubTitleColor: $orange !default
+$panelInnerAreaBgColor: #f9f9f9
+
+// Textarea
+$textareaTextInputColor: black !default
+$textareaTextInputBgColor: transparent !default
+
+// Thumbnail
+$thumbnailDurationColor: #fff !default
+$thumbnailDurationBgColor: #3D3D3D !default
+
+// Tooltip
+$tooltipBorderColor: $defaultBoxBorderColor !default
+$tooltipBackgroundColor: #fdf8cc !default
+$tooltipTextColor: #666 !default
+$tooltipAfterBorderColor: rgba(255, 255, 255, 0) !default
+$tooltipCloseTextColor: $tooltipTextColor !default
+
+// Upgrade
+$upgradeUniformPopularColor: white !default
+$upgradeUniformH2Color: $darkBlue !default
+$upgradeUniformParagraphColor: #777 !default
+$upgradeUniformAnnualContentColor: $darkBlue !default
+$upgradeBillingPanelRecommendedColor: #f0f0f0 !default
+$upgradeBillingPanelRecommendedBgColor: #e58618 !default
+
+// Form
+$formHolderLabelTextColor: #666 !default
+
+// TextField
+$textfieldEmptyTextColor: #adacac !default
+$textfieldDisabledBgColor: #e0e0e0 !default
+
+// Scroller
+$scrollerAreaBorderColor: #dfdfdf !default
+
+// Loader
+$loaderTextColor: $defaultTextColor !default
+
+//login
+$headerBarBackgroundColor: $darkBlue !default
+$headerBarTextColor: white !default
+$pageHeaderHeight: 40px !default
+$controlsLinkColor: $darkBlue !default
+$controlsTableSubmitButtonBackgroundColor: #062844  !default
+$loginPageFooterTextColor: #999999 !default
+$loginPageFooterLinkColor: #47aee0 !default
+$labelColor: #333 !default
+$textColor: #666  !default
+
+$loginPageHeaderTextColor: white !default
+$loginPageHeaderBgColor: #04415D !default
+$loginPageContentBgColor: white !default
+$loginPageContentBorderColor: #ccc !default
+$loginPageBodyBgColor: #f6f6f6 !default
+$loginPageDivTitleTextColor: #04415D !default
+
+
+//change password
+$caption2BackgroundColor: #0b405e  !default
+$smallHeaderColor: #0b405e !default
+$changePasswordSubmitButtonBackgroundColor: #062844 !default
+
+//federal EDC
+$disclosureBorderColor: black !default
+$disclosureBackgroundColor: #f2f2f2 !default
+
+// quick links
+$quickLinkListBorderColor: #AAA !default
+$quickLinkListBackgroundColor: #F4F4F4 !default
+$quickLinkListColor: #444 !default
+$quickLinkListGroupTitleBgColor: #c3c3c3 !default
+$quickLinkListItemHoverBgColor: #153E61 !default
+$quickLinkListItemHoverColor: white !default
+
+// scrollbars
+$scrollerTrackColor: #f4f2f3 !default
+$scrollerTrackWidth: 16px
+$scrollerKnobColor: #aaa !default
+
+// progress bar
+$progressbarLoadingTextColor: $defaultTextColor !default
+
+$directoryAssistanceSuggestAddressHighlightColor: #f9991f !default
+
+$bulkUploadGridErrorColumnTextColor: #ff0000 !default
+
+$bulkBuyUsersStepBgColor: #f9f9f9 !default
+$bulkBuyMultipleShippingLocationsBgColor: $bulkBuyUsersStepBgColor !default
+
+
+
+$e911DisclaimerColor: #ff0000 !default
+
+$selectPhonePhoneNameTextColor: #006993 !default
+$selectPhonePhonePriceTextColor: #006993 !default
+
+$rulesCallForwardingGroupBgColor: #e7f1f6 !default
+$rulesCallForwardingGroupOtherTextColor: #666666 !default
+
+$downloadToolsH3TextColor: #006992 !default
+
+$recordingPreviewWindowTextColor: #000 !default
+$recordingPreviewWindowBorderColor: #99cccc !default
+$recordingPreviewWindowBgColor: white !default
+
+$e911TitleColor: #006a91 !default
+
+$forwardExistingNumberInboundCallsTextColor: $defaultTextColor !default
+$forwardExistingNumberSourceNumberTextColor: $defaultTextColor !default
+$forwardExistingNumberBrandNameTextColor: #0b76a1 !default
+
+$ringOutStatusLabelTextColor: $darkBlue !default
+$ringOutButtonBackgroundColor: green !default
+$ringOutButtonBorderColor: green !default
+$ringOutButtonBackgroundHoverColor: green !default
+$ringOutButtonBorderHoverColor: green !default
+$wizardForwardExistingTitleColor: $panelTitleTextColor !default
+$wizardForwardExistingTextColor: $defaultBodyTextColor !default
+$wizardForwardExistingNumberColor: #0B405E !default
+
+$departmentMembersAvailabilityGridRowBorderColor: #ccc !default
+$departmentMembersAvailabilityGridBorderColor: #AECBDA !default
+
+$ringmeCallbackItemBackgroundColor: #D1E3EE !default
+$ringmeCallbackItemBorderColor: #AECBDA !default
+$ringmeCallbackItemTextColor: #063F60 !default
+$ringmeCallbackItemSelectedBackgroundColor: #063F60 !default
+$ringmeCallbackItemSelectedBorderColor: #063F60 !default
+$ringmeCallbackItemSelectedTextColor: white !default
+$ringmeCallbackCallButtonBorderColor: green !default
+$ringmeCallbackRedialButtonBackgroundColor: #D1E2ED !default
+$ringmeCallbackRedialButtonBorderColor: #A2C1D4 !default
+$ringmeCallbackRedialButtonTextColor: #063F60 !default
+$ringmeCallbackCountDownTextColor: #424242 !default
+$ringmeCallbackCallStatusTextColor: #063F60 !default
+
+$shippingAddressFormBackgroudColor: #f6f6f6 !default
+$shippingAddressFormBorderColor: #cacaca !default
+
+$billingServicePlanSectionTitleColor: #333333 !default
+$billingServicePlanViewRatesLinkColor: #666 !default
+
+$phonesMatchedTextColor: $darkBlue !default
+$phonesSelectedMatchedTextColor: white !default

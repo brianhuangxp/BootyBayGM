@@ -1,0 +1,45 @@
+<div class="supply-award-panel">
+    <div class="supply-award-condition-panel">
+        <div class="x-button" ng-click="setCondition()">添加发放条件</div>
+        <div rc-component="searchPanel" style="display: inline-block;margin-left: 18px;"></div>
+        <div id="supplyConditionList" class="supply-data-list"></div>
+    </div>
+    <div>
+        <textarea maxlength="500" ng-model="players" style="height: 58px;width: 100%" placeholder="输入玩家Id或者玩家名称"/>
+    </div>
+    <div class="supply-award-email-panel">
+        <div>
+            <input style="width: 100%" type="text" ng-model="emailTitle" placeholder="输入发送邮件标题">
+        </div>
+        <div>
+            <textarea style="height: 108px;width: 100%" ng-model="emailContent" placeholder="输入发送邮件内容"></textarea>
+        </div>
+    </div>
+    <div class="supply-award-resource-panel">
+        <label>
+            <span>附加钻石</span>
+            <input type="text" ng-model="gem">
+        </label>
+        <input type="checkbox" ng-model="isRecharge" value="1"><span>是否影响充值</span>
+        <label>
+            <span>附加金币</span>
+            <input type="text" ng-model="gold">
+        </label>
+        <label>
+            <span>附加经验</span>
+            <input type="text" ng-model="exp">
+        </label>
+
+        <div class="x-button" ng-click="setAdvancedAward()">添加其他项</div>
+        <div id="supplyAdvanceList" class="supply-data-list"></div>
+    </div>
+</div>
+
+
+<div style="text-align: center;">
+    <button ng-click="submit()">发布</button>
+</div>
+
+
+
+

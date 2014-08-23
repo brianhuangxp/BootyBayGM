@@ -1,0 +1,15 @@
+<div class="center-align advancedSelector-panel">
+    <div>
+        <select ng-model="model.advancedType" ng-options="p.label for p in advancedSelectors"></select>
+    </div>
+    <div>
+        <select ng-model="model.rank" ng-options="p.label for p in rankSelectors" class="ng-hide"
+                ng-show="rankSelectors.length > 1"></select>
+    </div>
+    <div>
+        <select ng-model="model.oid" ng-options="p.label for p in oidSelectors" ng-show="oidSelectors.length > 1">></select>
+    </div>
+    <div>
+        <input type="text" ng-model="model.amount" placeholder="输入数量" ng-readonly="readonly">
+    </div>
+</div>

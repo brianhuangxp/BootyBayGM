@@ -1,0 +1,22 @@
+<div rc-component="searchPanel"></div>
+<div class="panel panel-default x-table">
+    <table class="table table-striped table-hover text-center">
+        <thead>
+        <tr>
+            <th class="text-center">日期</th>
+            <th class="text-center">最高在线玩家数量</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr bindonce ng-repeat="data in matchedEntries = onlineList| orderBy:'recordTime'">
+            <td bo-html="data.recordTime | date"></td>
+            <td bo-html="data.amount | number"></td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr class="noData ng-hide" ng-show="onlineList.length == 0">
+            <td colspan="6">无数据</td>
+        </tr>
+        </tfoot>
+    </table>
+</div>

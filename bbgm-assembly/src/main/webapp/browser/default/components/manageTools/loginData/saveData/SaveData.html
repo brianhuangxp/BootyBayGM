@@ -1,0 +1,26 @@
+<div rc-component="searchPanel"></div>
+<div class="panel panel-default x-table">
+    <table class="table table-striped table-hover text-center">
+        <thead>
+        <tr>
+            <th class="text-center">1-30日留存</th>
+            <th class="text-center">创建用户数</th>
+            <th class="text-center">今日登录数</th>
+            <th class="text-center">留存比</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr bindonce ng-repeat="data in matchedEntries = saveDataList| orderBy:'saveDate'">
+            <td bo-html="data.saveDate"></td>
+            <td bo-html="data.createAmount | number"></td>
+            <td bo-html="data.saveAmount | number"></td>
+            <td bo-html="data | division:'saveAmount':'createAmount' | percentage"></td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr class="noData ng-hide" ng-show="saveDataList.length == 0">
+            <td colspan="6">无数据</td>
+        </tr>
+        </tfoot>
+    </table>
+</div>

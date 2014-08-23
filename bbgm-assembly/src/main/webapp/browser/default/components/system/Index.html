@@ -1,0 +1,34 @@
+<div class="top-bar">
+    <div class="logo-icon">
+        <div class="top-bar-icon"></div>
+        <div class="top-bar-content">
+            <span class="index-nickName">welcome : {{userNickName}}</span>
+            <span class="link" ng-click="Logout()">logout</span>
+        </div>
+    </div>
+</div>
+
+<div style="height: 90%;position: relative;width: 100%">
+    <div class="leftMenu">
+        <div
+                data-angular-treeview="true"
+                data-tree-id="mainMenu"
+                data-tree-model="treeList"
+                data-node-id="menuId"
+                data-node-label="title"
+                data-node-children="children">
+        </div>
+    </div>
+    <div class="main-container-wrap">
+        <div class="main-container-top" id="index-container">
+            <div class="main-container">
+                <div class="page-header" ng-hide="isOverview">
+                    <span class="page-header-title" ng-bind-html="pageHeaderTitle"></span>
+                </div>
+                <div ng-view="" class="pageContainer"/>
+            </div>
+        </div>
+        <div rc-component="serverSearchPanel" class="main-container-bottom ng-hide" ng-show="showBottomSearch"></div>
+    </div>
+</div>
+

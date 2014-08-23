@@ -1,0 +1,32 @@
+<div rc-component="searchPanel"></div>
+
+<div class="panel panel-default x-table">
+    <div class="x-table x-scroll-table">
+        <table class="table table-striped table-hover text-center">
+            <thead>
+            <tr>
+                <th class="text-center"> 日期</th>
+                <th class="text-center"> 总次数</th>
+                <th class="text-center"> 声望次数</th>
+                <th class="text-center"> 金币次数</th>
+                <th class="text-center"> 钻石次数</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr bindonce ng-repeat="data in matchedEntries = dataList|orderBy: 'recordTime' |startFrom:currentPage*pageSize|limitTo:pageSize">
+                <td bo-html="data.recordTime | date"></td>
+                <td bo-html="data | addition:'':'honorAmount':'goldAmount':'gemAmount' | number"></td>
+                <td bo-html="data.honorAmount | number"></td>
+                <td bo-html="data.goldAmount | number"></td>
+                <td bo-html="data.gemAmount| number"></td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr class="noData ng-hide" ng-show="dataList == null || dataList.length == 0">
+                <td colspan="6">无数据</td>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+    <div rc-component="tablePager"></div>
+</div>

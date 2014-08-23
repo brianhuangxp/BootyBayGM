@@ -1,0 +1,11 @@
+<div class="table-pager ng-hide" ng-show="showPager">
+    <span class="last x-float-right">共:{{totalRecords}}</span>
+    <span class="x-float-left">{{currentPage+1}}/{{totalPage}}</span>
+    <span ng-class="{true:'linkStyle'}[hasPrev]" class="x-float-left" ng-click="first()">首页</span>
+    <span ng-class="{true:'linkStyle'}[hasPrev]" class="x-float-left" ng-click="prev()">上一页</span>
+    <span ng-class="{true:'linkStyle'}[hasNext]" class="x-float-left" ng-click="next()">下一页</span>
+    <span ng-class="{true:'linkStyle'}[hasNext]" class="x-float-left" ng-click="last()">尾页</span>
+    <input maxlength="4" ng-model="gotoPage" class="x-float-left"/>
+    <button class="linkStyle x-float-left" ng-click="goto()">Go</button>
+
+</div>

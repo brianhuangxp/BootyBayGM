@@ -1,0 +1,171 @@
+<div style="padding-right: 18px">
+    <div rc-component="searchPanel"></div>
+
+    <div class="search-panel-div" style="margin: 18px 0 18px 0;text-align: center">
+        <label>ID：
+            <input style="width: 100px;" type="text" ng-model="playerDetail.uid" readonly="true">
+        </label>
+        <label>名称：
+            <input style="width: 100px;" type="text" ng-model="playerDetail.playerName" readonly="true">
+        </label>
+        <label>等级：
+            <input style="width: 100px;" type="text" ng-model="playerDetail.playerLevel" readonly="true">
+        </label>
+        <label>经验：
+            <input style="width: 100px;" type="text" value="{{playerDetail.playerExp | number}}" readonly="true">
+        </label>
+        <label>体力：
+            <input style="width: 100px;" type="text" ng-model="playerDetail.playerPower" readonly="true">
+        </label>
+        <label>钻石：
+            <input style="width: 100px;" type="text" value="{{playerDetail.gem | number}}" readonly="true">
+        </label>
+        <label>金币：
+            <input style="width: 100px;" type="text" value="{{playerDetail.gold | number}}" readonly="true">
+        </label>
+        <!--<label>背包数：
+            <input style="width: 100px;" type="text" ng-model="playerDetail.packageCellCount" readonly="true">
+        </label>-->
+    </div>
+    <div style="border-radius: 8px;border: lightblue 1px solid;padding: 12px;margin-top: 18px;">
+        <div style="width: 30%;display: inline-block;vertical-align: top;">
+            英雄明细
+            <div class="panel panel-default x-table x-scroll-table">
+                <table class="table table-striped table-hover text-center">
+                    <thead>
+                    <tr bindonce>
+                        <th class="text-center" style="width: 30%">英雄名称</th>
+                        <th class="text-center" style="width: 40%">英雄等级</th>
+                        <th class="text-center" style="width: 30%">修炼次数</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr bindonce ng-repeat="data in matchedEntries = playerDetail.heroList|orderBy: 'oid'">
+                        <td bo-html="data.name"></td>
+                        <td bo-html="data.level"></td>
+                        <td bo-html="data.hc"></td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr class="noData ng-hide"
+                        ng-show="playerDetail.heroList.length == 0 || playerDetail.heroList == null">
+                        <td colspan="3">无数据</td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+        <div style="width: 30%;display: inline-block; margin: 0 4% 0 4%;vertical-align: top;">
+            宠物明细
+            <div class="panel panel-default x-table x-scroll-table">
+                <table class="table table-striped table-hover text-center">
+                    <thead>
+                    <tr bindonce>
+                        <th class="text-center" style="width: 30%">宠物名称</th>
+                        <th class="text-center" style="width: 40%">宠物类型</th>
+                        <th class="text-center" style="width: 30%">宠物等级</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr bindonce ng-repeat="data in matchedEntries = playerDetail.petList|orderBy: 'oid'">
+                        <td bo-html="data.name"></td>
+                        <td bo-html="data.rank"></td>
+                        <td bo-html="data.level"></td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr class="noData ng-hide"
+                        ng-show="playerDetail.petList.length == 0 || playerDetail.petList == null">
+                        <td colspan="3">无数据</td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+        <div style="width: 30%;display: inline-block;vertical-align: top;">
+            声望明细
+            <div class="panel panel-default x-table x-scroll-table">
+                <table class="table table-striped table-hover text-center">
+                    <thead>
+                    <tr bindonce>
+                        <th class="text-center" style="width: 50%">声望名称</th>
+                        <th class="text-center" style="width: 50%">数量</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr bindonce ng-repeat="data in matchedEntries = playerDetail.honorList|orderBy: 'amount'">
+                        <td bo-html="data.name"></td>
+                        <td bo-html="data.amount | number"></td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr class="noData ng-hide"
+                        ng-show="playerDetail.honorList.length == 0 || playerDetail.honorList == null">
+                        <td colspan="2">无数据</td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div style="border-radius: 8px;border: lightblue 1px solid;padding: 12px;margin-top: 18px;">
+        <div style="width: 45%;display: inline-block;">
+            物品明细
+            <div class="panel panel-default x-table x-scroll-table">
+                <table class="table table-striped table-hover text-center">
+                    <thead>
+                    <tr bindonce>
+                        <th class="text-center" style="width: 30%">物品名称</th>
+                        <th class="text-center" style="width: 40%">物品品质</th>
+                        <th class="text-center" style="width: 30%">拥有数量</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr bindonce ng-repeat="data in matchedEntries = playerDetail.itemList|orderBy: 'oid'">
+                        <td bo-html="data.name"></td>
+                        <td bo-html="data.rank | codeMapping:itemRankMappings"></td>
+                        <td bo-html="data.amount"></td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr class="noData ng-hide"
+                        ng-show="playerDetail.itemList.length == 0 || playerDetail.itemList == null">
+                        <td colspan="3">无数据</td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+        <div style="width: 45%;float: right; display: inline-block;">
+            装备明细
+            <div class="panel panel-default x-table x-scroll-table">
+                <table class="table table-striped table-hover text-center">
+                    <thead>
+                    <tr bindonce>
+                        <th class="text-center" style="width: 30%">装备名称</th>
+                        <th class="text-center" style="width: 40%">装备品质</th>
+                        <th class="text-center" style="width: 30%">强化等级</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr bindonce ng-repeat="data in matchedEntries = playerDetail.equipList|orderBy: 'oid'">
+                        <td bo-html="data.name"></td>
+                        <td bo-html="data.rank | codeMapping:equipRankMappings"></td>
+                        <td bo-html="data.amount"></td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr class="noData ng-hide"
+                        ng-show="playerDetail.equipList.length == 0 || playerDetail.equipList == null">
+                        <td colspan="3">无数据</td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+

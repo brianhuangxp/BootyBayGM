@@ -1,0 +1,30 @@
+<div rc-component="searchPanel"></div>
+<div class="panel panel-default x-table">
+    <table class="table table-striped table-hover text-center">
+        <thead>
+        <tr>
+            <th class="text-center">日期</th>
+            <th class="text-center">导入用户数</th>
+            <th class="text-center">注册用户数</th>
+            <th class="text-center">创建角色数</th>
+            <th class="text-center">注册用户比</th>
+            <th class="text-center">创建角色比</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr bindonce ng-repeat="data in matchedEntries = translateList| orderBy:'recordTime'">
+            <td bo-html="data.recordTime | date"></td>
+            <td bo-html="data.importCount | number"></td>
+            <td bo-html="data.registerCount | number"></td>
+            <td bo-html="data.createCount | number"></td>
+            <td bo-html="data | division:'registerCount':'importCount' | percentage"></td>
+            <td bo-html="data | division:'createCount':'registerCount' | percentage"></td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr class="noData ng-hide" ng-show="translateList.length == 0">
+            <td colspan="6">无数据</td>
+        </tr>
+        </tfoot>
+    </table>
+</div>

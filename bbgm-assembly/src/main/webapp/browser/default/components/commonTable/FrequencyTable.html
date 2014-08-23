@@ -1,0 +1,27 @@
+<div class="panel panel-default x-table">
+    <div class="x-table x-scroll-table">
+        <table class="table table-striped table-hover text-center">
+            <thead>
+            <tr bindonce>
+                <th class="text-center" style="width: 30%" bo-html="header.frequencyLabel"></th>
+                <th class="text-center" style="width: 40%" bo-html="header.amountLabel"></th>
+                <th class="text-center" style="width: 30%" bo-html="header.ratioLabel"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr bindonce ng-repeat="data in matchedEntries = dataList|orderBy: 'frequency'|startFrom:currentPage*pageSize|limitTo:pageSize">
+                <td bo-html="data.frequency | {{frequencyFilter}}"></td>
+                <td bo-html="data.amount | {{amountFilter}}"></td>
+                <td bo-html="data | division:'amount':'sumAmount' | percentage"></td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr class="noData ng-hide" ng-show="dataList == null || dataList.length == 0">
+                <td colspan="3">无数据</td>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <div rc-component="tablePager"></div>
+</div>

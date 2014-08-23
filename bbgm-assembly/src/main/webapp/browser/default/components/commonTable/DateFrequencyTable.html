@@ -1,0 +1,25 @@
+<div class="panel panel-default x-table">
+    <div class="x-table x-scroll-table">
+        <table class="table table-striped table-hover text-center">
+            <thead>
+            <tr bindonce>
+                <th class="text-center" style="width: 50%" bo-html="header.reportTimeLabel"></th>
+                <th class="text-center" style="width: 50%" bo-html="header.amountLabel"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr bindonce ng-repeat="data in matchedEntries = dataList|orderBy: 'recordTime'|startFrom:currentPage*pageSize|limitTo:pageSize">
+                <td bo-html="data.recordTime | {{recordTimeFilter}}"></td>
+                <td bo-html="data.amount | {{amountFilter}}"></td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr class="noData ng-hide" ng-show="dataList == null || dataList.length == 0">
+                <td colspan="2">无数据</td>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <div rc-component="tablePager"></div>
+</div>

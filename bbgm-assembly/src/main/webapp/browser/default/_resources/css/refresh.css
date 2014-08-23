@@ -1,0 +1,110 @@
+.x-loader-static { position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index: 1000; *position: absolute; *top: expression(parseInt(document.documentElement.scrollTop, 0) + 'px'); text-align: center; }
+.x-loader-static .x-loader-fix { content: ""; width: 0; height: 100%; display: inline-block; *display: inline; *zoom: 1; vertical-align: middle; }
+.x-loader-static .x-loader-static-panel { border: 1px solid #aecbda; position: relative; -webkit-border-radius: 6px; -moz-border-radius: 6px; -ms-border-radius: 6px; -o-border-radius: 6px; border-radius: 6px; background-color: rgba(255, 255, 255, 0.8); background-color: transparent\9; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#bbffffff, endColorstr=#bbffffff); text-align: center; padding: 20px; display: inline-block; *display: inline; *zoom: 1; vertical-align: middle; }
+.x-loader-static .x-loader-static-panel img { width: 32px; height: 32px; }
+.x-loader-static .x-loader-static-panel div { margin-top: 10px; color: #063f60; }
+
+.x-form-label-standAlone { padding-top: 12px; text-align: left; }
+
+.x-button { padding: 4px 12px; background: #004590; display: inline-block; -webkit-border-radius: 9px; -moz-border-radius: 9px; -ms-border-radius: 9px; -o-border-radius: 9px; border-radius: 9px; min-width: 70px; text-align: center; color: white; }
+
+.x-button:hover { background: #0063ce; cursor: pointer; }
+
+.x-single-window { position: fixed; left: 0; top: 0; width: 100%; height: 100%; z-index: 1001; *position: absolute; *top: expression(parseInt(document.documentElement.scrollTop, 0)+'px'); text-align: center; font-family: Arial, Helvetica; }
+
+.x-multiple-window { position: fixed; left: 20%; top: 20%; z-index: 1001; *position: absolute; *top: expression(parseInt(document.documentElement.scrollTop, 0)+'px'); text-align: center; font-family: Arial, Helvetica; }
+
+.x-single-window .x-window-panel, .x-multiple-window .x-window-panel { min-width: 150px; color: white; position: relative; text-align: center; display: inline-block; *display: inline; *zoom: 1; vertical-align: middle; z-index: 1001; -webkit-border-radius: 6px; -moz-border-radius: 6px; -ms-border-radius: 6px; -o-border-radius: 6px; border-radius: 6px; -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5); -moz-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5); box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5); }
+.x-single-window .x-window-title, .x-multiple-window .x-window-title { font-size: 16px; background: #004590; padding: 5px; -webkit-border-radius: 6px 6px 0 0; -moz-border-radius: 6px 6px 0 0; -ms-border-radius: 6px 6px 0 0; -o-border-radius: 6px 6px 0 0; border-radius: 6px 6px 0 0; text-align: left; padding: 5px 15px; }
+.x-single-window .x-window-title .x-window-close, .x-multiple-window .x-window-title .x-window-close { padding: 0; cursor: pointer; background: 0 0; border: 0; -webkit-appearance: none; font-weight: bolder; color: white; text-shadow: 0 1px 0 white; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70); opacity: 0.7; position: absolute; right: 12px; }
+.x-single-window .x-window-content, .x-multiple-window .x-window-content { vertical-align: middle; padding: 15px; background: white; color: #666666; font-size: 14px; text-align: left; }
+.x-single-window .x-window-bottom, .x-multiple-window .x-window-bottom { background: white; color: #666666; text-align: right; padding: 0 15px; -webkit-border-radius: 0 0 6px 6px; -moz-border-radius: 0 0 6px 6px; -ms-border-radius: 0 0 6px 6px; -o-border-radius: 0 0 6px 6px; border-radius: 0 0 6px 6px; }
+.x-single-window .x-window-bottom .x-button, .x-multiple-window .x-window-bottom .x-button { margin: 0 12px 18px 12px; }
+
+.x-single-window .x-window-fix { content: ""; width: 0; height: 100%; display: inline-block; *display: inline; *zoom: 1; vertical-align: middle; }
+.x-single-window .x-window-background { background: black; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50); opacity: 0.5; position: fixed; top: 0; left: 0; *position: absolute; *top: expression(parseInt(document.documentElement.scrollTop, 0)+'px' ); height: 100%; width: 100%; z-index: 1000; display: block; }
+
+div[data-angular-treeview] { -moz-user-select: -moz-none; -khtml-user-select: none; -webkit-user-select: none; -ms-user-select: none; user-select: none; font-family: Tahoma; font-size: 13px; color: #555555; text-decoration: none; }
+
+div[data-tree-model] ul { margin: 0; padding: 0; list-style: none; border: none; overflow: hidden; }
+
+div[data-tree-model] li { position: relative; padding: 0 0 0 20px; line-height: 20px; }
+
+div[data-tree-model] li .expanded { padding: 0px 10px; background-image: url("/BootyBayGM/resources/img/treeview/folder.png"); background-repeat: no-repeat; }
+
+div[data-tree-model] li .collapsed { padding: 0px 10px; background-image: url("/BootyBayGM/resources/img/treeview/folder-closed.png"); background-repeat: no-repeat; }
+
+div[data-tree-model] li .normal { padding: 0px 10px; background-image: url("/BootyBayGM/resources/img/treeview/file.png"); background-repeat: no-repeat; }
+
+div[data-tree-model] li i, div[data-tree-model] li span { cursor: pointer; }
+
+div[data-tree-model] li .selected { background-color: #aaddff; font-weight: bold; padding: 1px 5px; }
+
+html, body { height: 100%; }
+
+body { margin: 0; padding: 0; overflow-y: scroll; font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #666666; }
+
+.right-align { text-align: right; }
+
+.center-align { text-align: center; }
+
+.fill-width-height { width: 100%; height: 100%; }
+
+.x-hide { display: none; }
+
+.container { width: 980px; margin: 0 auto; height: 500px; }
+
+.top-bar { padding: 6px 18px; text-align: right; }
+
+.logo-icon { padding-left: 200px; height: 25px; }
+
+.logo-icon > .top-bar-icon { height: 25px; display: inline-block; vertical-align: bottom; }
+
+.top-bar-content { display: inline-block; }
+
+.logo-icon > .top-bar-content { vertical-align: bottom; }
+
+.top-bar-content > span { margin-left: 18px; }
+
+.index-nickName { color: blue; }
+
+.link { color: #0b405e; font-weight: bold; cursor: pointer; white-space: nowrap; padding-left: 10px; }
+
+.dnd { color: #38b132; padding-left: 18px; font-weight: normal; }
+
+.leftMenu { padding: 12px 0; margin: 12px; border: lightblue 1px solid; border-radius: 8px; width: 20%; height: 100%; display: inline-block; *display: inline; *zoom: 1; vertical-align: top; float: left; overflow: auto; }
+
+.main-container-wrap { margin: 12px; width: 74%; height: 100%; display: inline-block; *display: inline; *zoom: 1; vertical-align: top; float: left; }
+.main-container-wrap .main-container-top { border-radius: 8px; border: lightblue 1px solid; padding: 18px; height: 100%; }
+.main-container-wrap .main-container-top .main-container { height: 100%; overflow: auto; }
+.main-container-wrap .main-container-top .main-container .pageContainer { height: 90%; width: 100%; position: relative; }
+.main-container-wrap .main-container-bottom { margin: 12px; height: 10%; position: relative; }
+
+.page-header { font-weight: normal; margin: 0 18px 11px 0; position: relative; text-align: center; }
+
+.page-header-title { font-size: 14px; border: 1px solid lightblue; }
+
+.page-header-bar { position: absolute; top: 0; bottom: 0; right: 0; left: 160px; text-align: right; }
+
+.page-header-bar-item { display: inline-block; padding-left: 32px; margin-right: 18px; color: #063f60; cursor: pointer; vertical-align: middle; height: 21px; line-height: 21px; }
+
+.page-header-bar-quicklink { width: 170px; display: inline-block; height: 24px; vertical-align: middle; cursor: pointer; }
+
+.footer { padding: 18px 18px 0; color: #999999; font-size: 11px; }
+
+.legal-copyright { color: #072844; font-size: 12px; text-decoration: none; margin-bottom: 9px; display: inline-block; }
+
+.x-scroll-table { max-height: 200px; overflow: auto; }
+.x-scroll-table .table { margin-bottom: 3px; table-layout: fixed; }
+
+.x-float-right { float: right; }
+
+.x-float-left { float: left; }
+
+.table-pager { border-top: 1px #dddddd solid; overflow: hidden; padding: 8px 40px 8px 0; }
+.table-pager > span { padding: 2px 0; }
+.table-pager > .linkStyle { color: #063f60; text-decoration: none; cursor: pointer; }
+.table-pager > .linkStyle:hover { color: blue; }
+.table-pager > span, .table-pager > input, .table-pager > button { margin: 0 10px; }
+.table-pager > input { cursor: text; width: 35px; }
+.table-pager .last { clear: both; }

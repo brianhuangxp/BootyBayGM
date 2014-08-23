@@ -1,0 +1,25 @@
+<div style="text-align: center;">
+    <span rc-component="serverSearchPanel" style="display: inline-block;"></span>
+    <span style="display: inline-block;">
+        <label style="margin-left: 12px;">开始时间：
+            <input id="search-panel-startDate" style="width: 100px;" type="text" ui-date="startDateOptions"
+                   ng-model="startDate">
+        </label>
+        <label style="margin-left: 24px;">结束时间：
+            <input id="search-panel-endDate" style="width: 100px;" type="text" ui-date="endDateOptions"
+                   ng-model="endDate">
+        </label>
+    </span>
+</div>
+
+<div style="text-align: center;margin: 18px 0;">
+    <textarea ng-model="announcement" style="width: 90%;height: 300px;"></textarea>
+</div>
+
+<div style="text-align: center;">
+    <button ng-click="submit()">发布</button>
+</div>
+
+
+
+

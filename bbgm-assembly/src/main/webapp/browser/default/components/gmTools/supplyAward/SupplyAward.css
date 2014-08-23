@@ -1,0 +1,13 @@
+.supply-award-panel { text-align: left; }
+.supply-award-panel input[type=text] { width: 100px; }
+.supply-award-panel .supply-award-condition-panel, .supply-award-panel .supply-award-resource-panel { border: 1px solid lightblue; padding: 18px; }
+.supply-award-panel .supply-award-condition-panel .supply-data-list, .supply-award-panel .supply-award-resource-panel .supply-data-list { margin: 12px 12px 0 12px; }
+.supply-award-panel .supply-award-condition-panel .supply-data-list span, .supply-award-panel .supply-award-resource-panel .supply-data-list span { -webkit-border-radius: 9px; -moz-border-radius: 9px; -ms-border-radius: 9px; -o-border-radius: 9px; border-radius: 9px; padding: 4px 12px; }
+.supply-award-panel .supply-award-condition-panel .supply-data-list span:hover, .supply-award-panel .supply-award-resource-panel .supply-data-list span:hover { color: white; font-weight: bolder; background: #0063ce; cursor: pointer; }
+.supply-award-panel .supply-award-resource-panel > label { margin: 0 12px; }
+.supply-award-panel .supply-award-resource-panel .x-button { margin: 0 12px; }
+
+.supply-award-panel > div, .conditionSelector-panel > div, .supply-award-email-panel > div, .advancedSelector-panel > div { margin: 12px 0; }
+
+.advancedSelector-panel select, .advancedSelector-panel input[type=text] { width: 140px; }
+.advancedSelector-panel input[type=text] { padding-left: 12px; }

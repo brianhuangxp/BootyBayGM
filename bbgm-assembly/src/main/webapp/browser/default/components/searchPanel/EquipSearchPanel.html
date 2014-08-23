@@ -1,0 +1,15 @@
+<div style="text-align: center" class="search-panel-div">
+    <label>开始日期：
+        <input id="search-panel-startDate" style="width: 100px;" type="text" ui-date="startDateOptions"
+               ng-model="startDate">
+    </label>
+    <label>结束日期：
+        <input id="search-panel-endDate" style="width: 100px;" type="text" ui-date="endDateOptions" ng-model="endDate">
+    </label>
+    <select ng-model="rank" ng-options="p.label for p in rankSelectors" class="ng-hide"
+            ng-show="rankSelectors.length > 1"></select>
+
+    <button style="margin-left: 12px;" ng-click="search()">查询</button>
+</div>
+
+

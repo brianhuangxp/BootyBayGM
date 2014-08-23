@@ -1,0 +1,11 @@
+<div class="center-align conditionSelector-panel">
+    <div>
+        <select ng-model="model.conditionType" ng-options="p.label for p in cOidSelectors"></select>
+    </div>
+    <div>
+        <input style="width: 100px;" type="text" ng-model="model.cMin" placeholder="范围下限">
+    </div>
+    <div>
+        <input style="width: 100px;" type="text" ng-model="model.cMax" placeholder="范围上限">
+    </div>
+</div>

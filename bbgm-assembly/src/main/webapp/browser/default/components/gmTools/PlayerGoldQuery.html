@@ -1,0 +1,33 @@
+
+<div rc-component="searchPanel"></div>
+
+<div class="panel panel-default x-table">
+    <div class="x-table x-scroll-table">
+        <table class="table table-striped table-hover text-center">
+            <thead>
+            <tr>
+                <th class="text-center">所在区服</th>
+                <th class="text-center">玩家名称</th>
+                <th class="text-center">金币记录</th>
+                <th class="text-center">途径</th>
+                <th class="text-center">时间</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr bindonce ng-repeat="data in matchedEntries = dataList|orderBy: '-recordTime'|startFrom:currentPage*pageSize|limitTo:pageSize">
+                <td bo-html="data.serverId | codeMapping:serverMappings"></td>
+                <td bo-html="data.playerName"></td>
+                <td bo-html="data.amount | number"></td>
+                <td bo-html="data.actionType | codeMapping:actionTypeMappings"></td>
+                <td bo-html="data.recordTime | date:'medium'"></td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr class="noData ng-hide" ng-show="dataList == null || dataList.length == 0">
+                <td colspan="5">无数据</td>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+    <div rc-component="tablePager"></div>
+</div>

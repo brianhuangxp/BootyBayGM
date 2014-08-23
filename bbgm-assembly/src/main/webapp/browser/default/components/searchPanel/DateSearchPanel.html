@@ -1,0 +1,11 @@
+<div style="text-align: center">
+    <label>{{startDateLabel}}
+        <input id="search-panel-startDate" style="width: 100px;" type="text" ui-date="startDateOptions" ng-model="startDate">
+    </label>
+    <label style="margin-left: 12px;" class="ng-hide" ng-show="isDateRange">{{endDateLabel}}
+        <input id="search-panel-endDate" style="width: 100px;" type="text" ui-date="endDateOptions" ng-model="endDate">
+    </label>
+    <button style="margin-left: 12px;" ng-click="search()" class="ng-hide" ng-show="isHideSearchBtn">{{searchLabel}}</button>
+</div>
+
+

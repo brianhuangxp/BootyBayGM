@@ -1,0 +1,56 @@
+<div style="text-align: center;margin-bottom: 18px;">
+    <span rc-component="serverSearchPanel"></span>
+
+    <div style="display: inline-block;width: 50%;padding-right: 12px;vertical-align: top;">
+        <textarea ng-model="playerName" style="height: 100px;width: 100%"></textarea>
+    </div>
+    <div style="display: inline-block;width: 49%;text-align: left;">
+        <div style="margin-bottom: 12px;">
+            <textarea maxlength="500" ng-model="cause" style="height: 65px;width: 100%" placeholder="输入封号理由"/>
+        </div>
+        <div>
+            <input type="text" ui-date="endDateOptions" style="margin-right: 18px"
+                   ng-model="endDate" placeholder="选择结束时间">
+            <div class="x-button" ng-click="frozen()" style="position: absolute;right: 12px">封号</div>
+        </div>
+    </div>
+
+</div>
+
+<div class="panel panel-default x-table">
+    <div class="x-table x-scroll-table">
+        <table class="table table-striped table-hover text-center">
+            <thead>
+            <tr>
+                <th class="text-center">所在区服</th>
+                <th class="text-center">玩家ID</th>
+                <th class="text-center">解封期限</th>
+                <th class="text-center">封停理由</th>
+                <th class="text-center">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr bindonce ng-repeat="data in matchedEntries = dataList|orderBy: '-autoDispelDate'|startFrom:currentPage*pageSize|limitTo:pageSize">
+                <td bo-html="data.serverId | codeMapping: serverMappings"></td>
+                <td bo-html="data.playerId"></td>
+                <td bo-html="data.autoDispelDate | date:'mediumDate'"></td>
+                <td bo-html="data.reason"></td>
+                <td>
+                    <div class="x-button" ng-click="dispel(data.serverId, data.piId, data.playerId)">解封</div>
+                 </td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr class="noData ng-hide" ng-show="dataList == null || dataList.length == 0">
+                <td colspan="5">无数据</td>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+    <div rc-component="tablePager"></div>
+</div>
+
+
+
+
+
