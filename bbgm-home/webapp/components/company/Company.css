@@ -1,0 +1,12 @@
+.company .company-title, .company .company-slogan { font-size: 18px; font-weight: bolder; }
+.company .company-brief { padding: 0 30px; width: 620px; }
+.company .company-brief .company-brief-content { font-size: 14px; }
+.company .split-bar { width: 500px; margin: 18px 0 0 0; }
+.company .company-slogan { padding: 10px 30px; }
+.company .company-culture { width: 775px; height: 467px; background: url("/website/resources/img/company/company-bg.png") no-repeat; background-size: contain; position: relative; top: 12px; margin: 50px 30px 0 30px; }
+.company .company-culture .say1, .company .company-culture .say2 { background: url("/website/resources/img/company/say.png") no-repeat; width: 134px; height: 56px; line-height: 1.4em; padding: 5px 32px; }
+.company .company-culture .say1 { position: absolute; top: 15px; left: 305px; }
+.company .company-culture .say2 { position: relative; top: -15px; left: 415px; }
+.company .company-culture .fist-letter { font-size: 18px; font-weight: bolder; }
+.company .company-culture .common-letter-wrap { margin-left: 2px; }
+.company .company-culture .common-letter { font-size: 14px; }

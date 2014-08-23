@@ -1,0 +1,4 @@
+.pageContainer-invite { background: url("/website/resources/img/invite/invite-bg.png") no-repeat right bottom; margin-bottom: 10px; }
+
+.invite .split-bar { width: 600px; }
+.invite .invite-title, .invite .invite-job, .invite .invite-treatment { margin-left: 50px; }

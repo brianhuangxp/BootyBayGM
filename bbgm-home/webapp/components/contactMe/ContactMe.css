@@ -1,0 +1,4 @@
+.contact .contact-content, .contact .contact-map { margin-left: 50px; }
+.contact .split-bar { width: 550px; }
+.contact .contact-map { background: url("/website/resources/img/contactMe/contact-map.jpg") no-repeat; height: 460px; margin-top: 25px; }
+.contact .contact-map .contact-map-here { position: relative; top: -27px; left: 104px; }

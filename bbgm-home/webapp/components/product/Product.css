@@ -1,0 +1,22 @@
+.pageContainer-product { background: url("/website/resources/img/product/product-bg.jpg") no-repeat left bottom; height: 1160px; padding: 20px 30px; color: white; -webkit-border-radius: 0 0 14px 14px; -moz-border-radius: 0 0 14px 14px; -ms-border-radius: 0 0 14px 14px; -o-border-radius: 0 0 14px 14px; border-radius: 0 0 14px 14px; }
+
+.product-content-left { width: 429px; display: inline-block; }
+.product-content-left .product-scan { display: inline-block; vertical-align: top; }
+.product-content-left .product-item { margin-left: 10px; display: inline-block; vertical-align: top; letter-spacing: 2px; font-size: 20px; }
+.product-content-left .product-item-link { display: block; text-align: center; margin-top: 8px; height: 41px; }
+.product-content-left .product-feature { padding-top: 30px; }
+.product-content-left .margintop20 { margin-top: 20px; }
+.product-content-left .product-android-down { background: url("/website/resources/img/product/android-download.png") no-repeat center bottom; }
+.product-content-left .product-android-down:hover { background: url("/website/resources/img/product/android-download-hover.png") no-repeat center bottom; }
+.product-content-left .product-iso-down { background: url("/website/resources/img/product/iso-download.png") no-repeat center bottom; }
+.product-content-left .product-iso-down:hover { background: url("/website/resources/img/product/iso-download-hover.png") no-repeat center bottom; }
+
+.product-content-right { display: inline-block; width: 505px; vertical-align: top; }
+
+.product-content-left .product-feature-title, .product-content-right .product-brief { font-size: 24px; }
+
+.product-content-left .product-feature-content, .product-content-right .product-detail { font-size: 18px; }
+
+.product-content-left .product-feature-content, .product-content-right .product-detail { padding-top: 12px; }
+
+.product-content-left .product-item, .product-content-right .product-detail { line-height: 1.6em; }

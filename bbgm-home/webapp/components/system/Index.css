@@ -1,0 +1,36 @@
+body, ul, ol, li, p, h1, h2, h3, h4, h5, h6, form, fieldset, table, td, img, div, menu, dl, dd { margin: 0; padding: 0; border: 0; }
+
+ul, ol, li { list-style: none; }
+
+body { background: #f1f1f1; font: 12px/20px "Microsoft YaHei", "Arial", "Helvetica Neue", "Helvetica", "sans-serif"; word-break: break-all; word-wrap: break-word; }
+
+.split-bar { width: 100%; height: 10px; background: url("/website/resources/img/home/line_bg.png") no-repeat left top; background-size: contain; margin: 18px 0; }
+
+.fontsize18 { font-size: 18px; }
+
+.fontsize24 { font-size: 24px; }
+
+.wrap { background: white; border: 1px solid #bdbdbd; box-shadow: 0px 0px 1px white; margin: auto; position: relative; top: 32px; width: 1000px; -webkit-border-radius: 14px; -moz-border-radius: 14px; -ms-border-radius: 14px; -o-border-radius: 14px; border-radius: 14px; min-height: 500px; }
+
+.w940 { width: 1000px; padding: 0 30px; }
+
+.header { position: relative; height: 96px; background: url("/website/resources/img/home/line_bg.png") no-repeat center bottom; z-index: 10; }
+.header .menuWrap { margin: 0 0 0 145px; padding: 17px 0 0 0; }
+.header .menuWrap .menu a { text-decoration: none; }
+.header .menuWrap .menu li { display: inline-block; padding: 20px; font-size: 12px; padding: 0; }
+.header .menuWrap .menu li div { height: 60px; padding: 14px; }
+
+.header .menuWrap .menu li.cur, .header .menuWrap .menu li:hover { cursor: pointer; background: url("/website/resources/img/home/menu-bg.jpg") repeat; height: 78px; display: inline-block; }
+.header .menuWrap .menu li.cur div, .header .menuWrap .menu li:hover div { padding: 13px; -webkit-border-radius: 8px 8px 0 0; -moz-border-radius: 8px 8px 0 0; -ms-border-radius: 8px 8px 0 0; -o-border-radius: 8px 8px 0 0; border-radius: 8px 8px 0 0; border-top: 1px solid #bdbdbd; border-right: 1px solid #bdbdbd; border-left: 1px solid #bdbdbd; }
+.header .logo { position: absolute; right: 5px; top: 0; }
+.header .logo a { background: url("/website/resources/img/home/gs_logo.png") no-repeat center bottom; display: block; width: 74px; height: 77px; text-indent: -10000px; }
+
+.pageContainer { padding: 0 30px 20px; }
+
+.friend-link { background: white; border: 1px solid #bdbdbd; box-shadow: 0px 0px 1px white; margin: 10px auto 0; position: relative; top: 32px; width: 1000px; -webkit-border-radius: 14px; -moz-border-radius: 14px; -ms-border-radius: 14px; -o-border-radius: 14px; border-radius: 14px; padding: 10px 20px; color: #7b7b7b; }
+.friend-link a { color: #7b7b7b; text-align: center; }
+.friend-link h3 { font-size: 18px; line-height: 22px; border-bottom: 1px solid #dddddd; padding: 0 0 10px 0; margin: 0 0 10px 0; }
+
+.footer { margin: 25px auto 65px; overflow: hidden; text-align: center; color: #cccccc; text-shadow: 0px 1px 1px white; }
+.footer .footer-link { color: #cccccc; }
+.footer .footer-link:hover { color: #428bca; }
