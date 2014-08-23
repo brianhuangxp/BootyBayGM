@@ -1,0 +1,124 @@
+
+insert into gm_tmp_server_status(id,server_id,record_time,online_count)
+select tmp_log_sequences.nextval,
+       round(DBMS_RANDOM.value(1, 2)),
+       sysdate - DBMS_RANDOM.value(1, 100),
+       round(DBMS_RANDOM.value(20, 3000))
+  from gm_tmp_server_status;
+
+select tmp_log_sequences.nextval,
+       round(DBMS_RANDOM.value(1, 2)),
+       sysdate - DBMS_RANDOM.value(1, 100),
+       round(DBMS_RANDOM.value(20, 3000))
+  from dual;
+
+
+-- 4.1.4	每天登录次数
+
+  select record_time,login_freq, sum(player_quantity) from gm_rpt_login_dayly where 1 = 1 
+  --
+  group by record_time,login_freq;
+
+
+-- 在线峰值
+  insert into gm_rpt_online_perhour(oph_id,server_id,hour_online,record_time)
+  select cmmon_seq.nextval, round(dbms_random.value(1,2)), round(dbms_random.value(1,500)), trunc(sysdate - dbms_random.value(1,20))
+  from gm_rpt_online_perhour;
+
+
+-- 4.1.5.1	小时在线峰值
+
+  select record_time, max(hour_online) from gm_rpt_online_perhour where 1 = 1 
+  --
+  group by record_time;
+
+-- 4.1.5.2	天在线峰值
+
+  select trunc(record_time), max(hour_online) from gm_rpt_online_perhour where 1 = 1 
+  --
+  group by trunc(record_time);
+
+
+--4.1.6	活跃用户数 
+
+  insert into gm_rpt_active_user(act_id,provider_id,server_id,active_quantity,record_time)
+  select cmmon_seq.nextval, round(dbms_random.value(1,2)),round(dbms_random.value(1,2)), round(dbms_random.value(1,500)), trunc (sysdate - dbms_random.value(1,20))
+  from gm_rpt_active_user;
+
+
+  select record_time, sum(active_quantity) from gm_rpt_active_user where 1 = 1 
+  --
+  group by record_time
+
+-- 玩家每天在线表
+
+  insert into gm_tmp_login(id,provider_id,server_id,player_id,login_type,logout_time)
+  select cmmon_seq.nextval, round(dbms_random.value(1,2)),round(dbms_random.value(1,2)),round(dbms_random.value(1,300)), '2', sysdate - dbms_random.value(1,5)
+  from gm_tmp_role;
+
+  update gm_tmp_login set login_time = logout_time - dbms_random.value(0,3);
+
+  insert into gm_tmp_login(id,provider_id,server_id,player_id,login_type,login_time)
+  select cmmon_seq.nextval, provider_id,server_id,player_id, '1', login_time
+  from gm_tmp_login;
+
+
+
+  select distinct provider_id, server_id, player_id
+    from gm_tmp_login gtl
+   where 1 = 1
+     and ((login_type = '2' and trunc(sysdate - 2) >= login_time and
+         trunc(sysdate - 2) < logout_time) or
+         (login_type = '1' and trunc(login_time) = trunc(sysdate - 2)) or
+         (login_type = '1' and trunc(sysdate - 2) >= login_time and
+         not exists (select 1
+                        from gm_tmp_login l1, gm_tmp_login l2
+                       where l1.id = gtl.id
+                         and l1.login_type = '1'
+                         and l2.login_type = '2'
+                         and l1.provider_id = l2.provider_id
+                         and l1.server_id = l2.server_id
+                         and l1.login_time = l2.login_time)));
+
+
+  insert into gm_rpt_online_dayly
+    (odl_id, provider_id, server_id, player_id, record_time)
+    select cmmon_seq.nextval,
+           provider_id,
+           server_id,
+           player_id,
+           trunc(sysdate - 1)
+      from (select distinct provider_id, server_id, player_id
+              from gm_tmp_login gtl
+             where 1 = 1
+               and ((login_type = '2' and trunc(sysdate - 1) >= login_time and
+                   trunc(sysdate - 1) < logout_time) or
+                   (login_type = '1' and
+                   trunc(login_time) = trunc(sysdate - 1)) or
+                   (login_type = '1' and trunc(sysdate - 1) >= login_time and
+                   not exists
+                    (select 1
+                        from gm_tmp_login l1, gm_tmp_login l2
+                       where l1.id = gtl.id
+                         and l1.login_type = '1'
+                         and l2.login_type = '2'
+                         and l1.provider_id = l2.provider_id
+                         and l1.server_id = l2.server_id
+                         and l1.login_time = l2.login_time))));
+
+
+-- proce_active_user 1.1.1	活跃用户数
+
+select provider_id, server_id, count(1) pq
+        from (select provider_id, server_id, player_id
+                from gm_rpt_online_dayly 
+               where record_time >= trunc(sysdate ) -3
+                 and record_time < trunc(sysdate )
+               group by provider_id, server_id, player_id)
+       group by provider_id, server_id;
+
+
+--- 留存数据
+  insert into gm_tmp_role(id,provider_id,server_id,player_id,operat_type,record_time)
+  select cmmon_seq.nextval, round(dbms_random.value(1,2)),round(dbms_random.value(1,2)),cmmon_seq.currval, '2', sysdate - dbms_random.value(1,200)
+  from gm_tmp_role;

@@ -1,0 +1,33 @@
+充值金额有小数？
+gm_rpt_prepay_APU 表受影响
+
+
+2个供应商 对于一个服务器，统计信息，会出现重复统计问题。
+
+在线用户算登陆数，活跃用户数，留存数据等 均需要计算。
+
+
+gm_tmp_server_status
+gm_rpt_prepay
+gm_rpt_masonry_crease
+gm_tmp_role
+gm_tmp_login
+gm_tmp_consume
+
+
+
+
+gm_tmp_consume
+gm_rpt_masonry_crease
+
+
+gm_rpt_online_perhour
+
+gm_rpt_user_translate
+gm_tmp_role
+gm_tmp_login
+gm_tmp_consume
+
+
+
+import com.gamehoo.domain.vo.manageTools.loginData.UserTranslateVo;
