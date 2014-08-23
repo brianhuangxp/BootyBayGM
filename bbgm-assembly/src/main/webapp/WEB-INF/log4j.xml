@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'>
+
+    <appender name="coreLogs" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="../bbgm-core-log/bbgm-interior.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{DATE} %5p %c{1}:%L - %m%n"/>
+        </layout>
+
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="debug"/>
+            <param name="LevelMax" value="FATAL"/>
+        </filter>
+
+    </appender>
+
+    <appender name="appLogs" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="../bbgm-core-log/bbgm-app.log"/>
+        <param name="Threshold" value="info"/>
+        <param name="Append" value="true"/>
+        <param name="maxFileSize" value="50MB"/>
+        <param name="maxBackupIndex" value="5"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{DATE} %-5p %-15c{1}:%M() %m%n"/>
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="info"/>
+        </filter>
+    </appender>
+
+    <appender name="errorfile" class="org.apache.log4j.RollingFileAppender">
+        <param name="maxFileSize" value="50MB"/>
+        <param name="maxBackupIndex" value="2"/>
+        <param name="File" value="../bbgm-core-log/bbgm-errors.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{DATE} %5p %c{1}:%L - %m%n"/>
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="error"/>
+            <param name="LevelMax" value="fatal"/>
+        </filter>
+    </appender>
+
+    <appender name="CONSOLE.OUT" class="org.apache.log4j.ConsoleAppender">
+        <param name="target" value="System.out" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="%-5p: %c - %m%n" />
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="debug" />
+            <param name="LevelMax" value="info" />
+            <param name="AcceptOnMatch" value="false" />
+        </filter>
+    </appender>
+
+    <logger name="com.gamehoo">
+        <level value="debug"/>
+        <appender-ref ref="coreLogs"/>
+        <appender-ref ref="CONSOLE.OUT" />
+    </logger>
+
+    <root>
+        <level value="info"/>
+        <appender-ref ref="appLogs"/>
+        <appender-ref ref="errorfile"/>
+    </root>
+
+</log4j:configuration>
