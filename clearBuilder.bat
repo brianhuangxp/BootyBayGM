@@ -13,4 +13,6 @@ md localStorage
 
 rd /s /Q bbgm-home\webapp\WEB-INF\compass\.sass-cache
 rd /s /Q bbgm-home\webapp\WEB-INF\classes
+rd /s /Q bbgm-home\webapp\WEB-INF\lib
+rd /s /Q bbgm-home\webapp\META-INF
 pause
