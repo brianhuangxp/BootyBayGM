@@ -1,0 +1,110 @@
+@import "../_core"
+
+.x-form-label-standAlone
+    padding-top: 12px
+    text-align: left
+
+.x-button
+    padding: 4px 12px
+    background: #004590
+    display: inline-block
+    +border-radius(9px)
+    min-width: 70px
+    text-align: center
+    color: white
+.x-button:hover
+    background: #0063ce
+    cursor: pointer
+
+.x-single-window
+    position: fixed
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    z-index: 1001
+    *position: absolute
+    *top: expression(parseInt(document.documentElement.scrollTop, 0)+'px')
+    text-align: center
+    font-family: Arial, Helvetica
+.x-multiple-window
+    position: fixed
+    left: 20%
+    top: 20%
+    z-index: 1001
+    *position: absolute
+    *top: expression(parseInt(document.documentElement.scrollTop, 0)+'px')
+    text-align: center
+    font-family: Arial, Helvetica
+
+.x-single-window, .x-multiple-window
+    .x-window-panel
+        min-width: 150px
+        color: $defaultTextColorActive
+        position: relative
+        text-align: center
+        display: inline-block
+        *display: inline
+        *zoom: 1
+        vertical-align: middle
+        z-index: 1001
+        +border-radius(6px)
+        +box-shadow(0 5px 10px 0 rgba(0, 0, 0, 0.5))
+
+    .x-window-title
+        font-size: 16px
+        background: #004590
+        padding: 5px
+        +border-radius(6px 6px 0 0)
+        text-align: left
+        padding: 5px 15px
+        .x-window-close
+            padding: 0
+            cursor: pointer
+            background: 0 0
+            border: 0
+            -webkit-appearance: none
+            font-weight: bolder
+            color: white
+            text-shadow: 0 1px 0 #fff
+            +opacity(0.7)
+            position: absolute
+            right: 12px
+    .x-window-content
+        vertical-align: middle
+        padding: 15px
+        background: white
+        color: $defaultBodyTextColor
+        font-size: 14px
+        text-align: left
+
+    .x-window-bottom
+        background: white
+        color: $defaultBodyTextColor
+        text-align: right
+        padding: 0 15px
+        +border-radius(0 0 6px 6px)
+        .x-button
+            margin: 0 12px 18px 12px
+
+.x-single-window
+    .x-window-fix
+        content: ""
+        width: 0
+        height: 100%
+        display: inline-block
+        *display: inline
+        *zoom: 1
+        vertical-align: middle
+    .x-window-background
+        background: $windowBackgroundMaskColor
+        +opacity(0.5)
+        position: fixed
+        top: 0
+        left: 0
+        *position: absolute
+        *top: expression(parseInt(document.documentElement.scrollTop, 0)+'px' )
+        height: 100%
+        width: 100%
+        z-index: 1000
+        display: block

@@ -1,0 +1,68 @@
+@import compass/css3
+@import "variables_min"
+
+@mixin floatingPanel()
+    float: left
+    margin-left: 18px
+
+@mixin formElement()
+    +inline-block()
+    vertical-align: top
+
+@mixin formElementTable()
+    display: inline-table
+    vertical-align: top
+
+// Mixins
+
+//@mixin csspie()
+//    behavior: url($resourcesPathAbs + '/css/css3pie/PIE.htc')
+
+@mixin inline-block()
+    display: inline-block
+    *display: inline
+    *zoom: 1
+
+@mixin rgbaBackground($color, $alpha, $ieColor)
+    background-color: rgba($color, $alpha)
+    background-color: transparent\9
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$ieColor}, endColorstr=#{$ieColor})
+
+@mixin debug()
+    +rgbaBackground(#ff0000, 0.3, "#66ff0000")
+
+@mixin ellipsis($width: null)
+    @if ($width != null)
+        width: $width
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+    -o-text-overflow: ellipsis
+    -ms-text-overflow: ellipsis
+
+@mixin wordBreak()
+    word-break: break-all
+    word-wrap: break-word
+
+@mixin loginPage-footer()
+    a
+        color: $defaultCopyrightColor
+        text-decoration: none
+    .loginPage-footer-content
+        color: $loginPageFooterTextColor
+        font-size: 11px
+        margin: 1em 0
+    color: $loginPageFooterTextColor
+    margin-left: 18px
+    font-size: 11px
+
+@mixin linkStyle()
+    color: $defaultLinkTextColor
+    text-decoration: none
+
+    &:hover
+        color: $defaultLinkTextHoverColor
+
+@mixin copyrightStyle()
+    color: $defaultCopyrightColor
+    text-decoration: none
