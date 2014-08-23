@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/bbgm-assembly/bbgm-assembly.iml" filepath="$PROJECT_DIR$/bbgm-assembly/bbgm-assembly.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bbgm-common/bbgm-common.iml" filepath="$PROJECT_DIR$/bbgm-common/bbgm-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bbgm-home/bbgm-home.iml" filepath="$PROJECT_DIR$/bbgm-home/bbgm-home.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bbgm-import/bbgm-import.iml" filepath="$PROJECT_DIR$/bbgm-import/bbgm-import.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bbgm-ms-core/bbgm-ms-core.iml" filepath="$PROJECT_DIR$/bbgm-ms-core/bbgm-ms-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bbgm-parent.iml" filepath="$PROJECT_DIR$/bbgm-parent.iml" />
+    </modules>
+  </component>
+</project>
+

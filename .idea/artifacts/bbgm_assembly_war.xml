@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="bbgm-assembly:war">
+    <output-path>$PROJECT_DIR$/bbgm-assembly/target</output-path>
+    <root id="archive" name="BootyBayGM.war">
+      <element id="artifact" artifact-name="bbgm-assembly:war exploded" />
+    </root>
+  </artifact>
+</component>

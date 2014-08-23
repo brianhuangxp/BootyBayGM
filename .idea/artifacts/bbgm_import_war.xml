@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="bbgm-import:war">
+    <output-path>$PROJECT_DIR$/bbgm-import/target</output-path>
+    <root id="archive" name="BootyBayImport.war">
+      <element id="artifact" artifact-name="bbgm-import:war exploded" />
+    </root>
+  </artifact>
+</component>
