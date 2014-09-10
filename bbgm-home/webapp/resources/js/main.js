@@ -6,7 +6,7 @@ require.config({
         'angular-cookies': '../resources/js/lib/angular/angular-cookies',
         'angular-sanitize': '../resources/js/lib/angular/angular-sanitize',
         'angular-locale_zh': '../resources/js/lib/angular/i18n/angular-locale_zh-cn',
-        'jquery': '../resources/js/lib/jquery/jquery-2.0.3',
+        'jquery': '../resources/js/lib/jquery/jquery-1.9.1',
         'jqueryUI': '../resources/js/lib/jquery/jquery-ui.custom',
         config: '../resources/js/config',
         'angular-extend': '../resources/js/lib/angular-extend/angular-extend',
@@ -27,6 +27,7 @@ require.config({
     urlArgs: 'v=gamehooHome-1.0'
 });
 require(['jquery', 'angular','config', 'app'], function (jquery, angular, config) {
+    config.isHtml5Mode = config.isHtml5Mode && angular.injector(['ng']).get("$sniffer").history;
     angular.element(document).ready(
         function () {
             angular.bootstrap(document, [config.appName]);
