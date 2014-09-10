@@ -4,35 +4,35 @@
             <menu class="menuWrap">
                 <nav>
                     <ul class="menu">
-                        <a href="home">
+                        <a href="{{hrefList[0]}}">
                             <li ng-class="homeClass">
                                 <div>
                                     首页
                                 </div>
                             </li>
                         </a>
-                        <a href="company">
+                        <a href="{{hrefList[1]}}">
                             <li ng-class="companyClass">
                                 <div>
                                     公司简介
                                 </div>
                             </li>
                         </a>
-                        <a href="product">
+                        <a href="{{hrefList[2]}}">
                             <li ng-class="productClass">
                                 <div>
                                     产品项目
                                 </div>
                             </li>
                         </a>
-                        <a href="invite">
+                        <a href="{{hrefList[3]}}">
                             <li ng-class="inviteClass">
                                 <div>
                                     人才招聘
                                 </div>
                             </li>
                         </a>
-                        <a href="contactMe">
+                        <a href="{{hrefList[4]}}">
                             <li ng-class="contactMeClass">
                                 <div>
                                     联系我们
@@ -42,7 +42,7 @@
                     </ul>
                 </nav>
             </menu>
-            <span class="logo"><a href="home" title="厦门游互信息科技有限公司">GameHoo</a></span>
+            <span class="logo"><a href="{{hrefList[0]}}" title="厦门游互信息科技有限公司">GameHoo</a></span>
         </header>
     </section>
     <div id="pageContainer" ng-view="" class="pageContainer"/>
