@@ -8,38 +8,50 @@ define(['config', 'app'], function (config, app) {
             name: 'Footer',
             location: 'system/'
         };
+
+        var hrefList = [];
+        var hrefPrefix = config.isHtml5Mode ? "" : "#";
+        hrefList.push(hrefPrefix + config.homePath);
+        hrefList.push(hrefPrefix + 'company');
+        hrefList.push(hrefPrefix + 'product');
+        hrefList.push(hrefPrefix + 'invite');
+        hrefList.push(hrefPrefix + 'contactMe');
+
+        $scope.hrefList = hrefList;
+
         var routeArray = [
             {
-                routePath: config.appPath + '/home',
+                routePath: '/' + config.homePath,
                 modulePath: 'home/',
                 moduleName: 'Home',
                 loadCss: true
             },
             {
-                routePath: config.appPath + '/company',
+                routePath: '/company',
                 modulePath: 'company/',
                 moduleName: 'Company',
                 loadCss: true
             },
             {
-                routePath: config.appPath + '/product',
+                routePath: '/product',
                 modulePath: 'product/',
                 moduleName: 'Product',
                 loadCss: true
             },
             {
-                routePath: config.appPath + '/invite',
+                routePath: '/invite',
                 modulePath: 'invite/',
                 moduleName: 'Invite',
                 loadCss: true
             },
             {
-                routePath: config.appPath + '/contactMe',
+                routePath: '/contactMe',
                 modulePath: 'contactMe/',
                 moduleName: 'ContactMe',
                 loadCss: true
             }
         ];
+
         app.register.setRouters(routeArray);
         $route.reload();
         $scope.$on('selectMenu', function (e, module) {

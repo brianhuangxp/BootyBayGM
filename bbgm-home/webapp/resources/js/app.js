@@ -51,7 +51,7 @@ define(['jquery', 'angular', 'config', 'require', 'angular-route', 'angular-cook
         });
 
         // TODO  with html5Mode
-        $locationProvider.html5Mode(true);
+        $locationProvider.html5Mode(config.isHtml5Mode);
         var routeConfig = routeResolverProvider.routeConfig;
 
         routeConfig.setBaseDirectory("components/", "components/");
@@ -66,11 +66,11 @@ define(['jquery', 'angular', 'config', 'require', 'angular-route', 'angular-cook
                 return setRouters;
                 function setRouters(routeArray) {
                     routeArray.forEach(function (r) {
-                        routeProvider.when(r.routePath, routeResolve(r.moduleName, r.modulePath, r.loadCss))
+                        var routePath = config.isHtml5Mode ? config.appPath + r.routePath : r.routePath;
+                        routeProvider.when(routePath, routeResolve(r.moduleName, r.modulePath, r.loadCss))
                     });
                     routeProvider.otherwise({
-                        //        redirectTo: RC.Config.projectPath
-                        redirectTo: "/website/home"
+                        redirectTo: config.isHtml5Mode ? config.appPath + '/' + config.homePath : config.homePath
                     });
                 }
             })($routeProvider, routeResolverProvider.route.resolve)

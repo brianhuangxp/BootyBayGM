@@ -8,8 +8,36 @@
     <link rel="stylesheet" href="resources/css/bootstrap.css"/>
     <link rel="stylesheet" href="resources/css/jquery-ui.css"/>
     <link rel="stylesheet" href="resources/css/refresh.css"/>
+    <!--[if lt IE 8]>
+    <script>
+        alert('检测到您的浏览器无法支持，友情提示gamehoo支持常见浏览器Chrome、Firefox、Safari、opera、IE8及其以上版本。' +
+                '请升级IE浏览器或切换支持的浏览器。谢谢合作。 ^-^');
+    </script>
+    <!--<![endif]-->
+    <!--[if gte IE 8]><!-->
+    <script>
+        if (typeof Function.prototype.bind != "function") {
+            Function.prototype.bind = function(){
+                var fn = this, args = Array.prototype.slice.call(arguments), object = args.shift();
+                return function(){
+                    return fn.apply(object,
+                            args.concat(Array.prototype.slice.call(arguments)));
+                };
+            };
+        }
 
+        if (typeof Array.prototype.forEach != "function") {
+            Array.prototype.forEach = function (fn, context) {
+                for (var k = 0, length = this.length; k < length; k++) {
+                    if (typeof fn === "function" && Object.prototype.hasOwnProperty.call(this, k)) {
+                        fn.call(context, this[k], k, this);
+                    }
+                }
+            };
+        }
+    </script>
     <script data-main="resources/js/main" src="resources/js/lib/requireJs/require.js"></script>
+    <!--<![endif]-->
 </head>
 <body>
 <div id="app-main" class="fill-width-height"/>
